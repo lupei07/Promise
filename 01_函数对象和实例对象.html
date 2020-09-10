@@ -1,0 +1,39 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-08 13:30:02
+ * @LastEditTime: 2020-09-08 17:28:44
+ * @FilePath: \Promise\01_函数对象和实例对象.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01_函数对象和实例对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * http://www.woc12138.com/article/43
+    1. 函数对象与实例对象
+        函数对象：将函数作为对象使用时，简称为函数对象
+        实例对象：new 函数产生的对象，简称为对象
+    */
+    function Fn() {  // Fn只能称为函数
+
+    }
+    const fn = new Fn();    // Fn只有new过的才可以称为构造函数  fn是实例对象（简称为对象）
+    console.log(Fn.prototype)   // Fn是函数对象 Fn作为对象使用时
+    Fn.bind({}) // Fn是函数对象
+    $('#test') // jQuery函数 $作为函数使用
+    $.get('/test')  // jQuery函数对象   $作为函数对象使用
+    // ()左边必然是函数  点左边就是函数对象
+</script>
+
+</html>

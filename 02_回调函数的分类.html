@@ -1,0 +1,67 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-08 13:57:26
+ * @LastEditTime: 2020-09-08 14:49:43
+ * @FilePath: \Promise\02_回调函数的分类.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02_回调函数的分类</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        1. 同步回调：
+            理解：立即执行，完全执行完了才结束，不会放入回调队列中
+            例子：数组遍历相关的回调函数 / Promise的excutor函数
+        2. 异步回调：
+            理解：不会立即执行，会放入回调队列中将来执行
+            例子：定时器回调 / ajax回调 / Promise的成功|失败回调
+        */
+        // 1. 同步回调函数
+        const arr = [1, 3, 5]
+        arr.forEach(item => {   // 遍历回调，同步回调函数，不会放入队列，一上来就要执行完
+            console.log(item)
+        })
+        console.log('forEach()之后')
+        // 结果
+        // 1
+        // 3
+        // 5
+        // forEach()之后
+
+        // 2. 异步回调函数
+        // 定时器回调
+        setTimeout(() => {  // 异步回调函数，会放入队列中将来执行
+            console.log('timeout callback()')
+        }, 0);
+        console.log('setTimeout()之后')
+        // 结果
+        // setTimeout()之后
+        // timeout callback()
+
+        // Promise 成功或失败回调
+        new Promise((resolve, reject) => {
+            resolve(1)
+        }).then(
+            res => console.log('res', res)
+        )
+        console.log('Promise()之后')
+        // 结果
+        // Promise()之后
+        // res 1
+
+
+        // js 引擎是先把初始化的同步代码都执行完成后，才执行回调队列中的代码
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-10 13:55:05
+ * @LastEditTime: 2020-09-10 15:36:10
+ * @FilePath: \Promise\06_Promise的API.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06_Promise的API</title>
+</head>
+
+<body>
+    <script>
+        /*  1. Promise 构造函数：Promise(excutor) {}
+            excutor 函数：同步执行 (resolve, reject) => {}
+            resolve 函数：内部定义成功时调用的函数 value => {}
+            resolve 函数：内部定义失败时调用的函数 reason => {}
+            说明：excutor 是执行器，会在 Promise 内部立即同步回调，异步操作 resolve/reject 则在 excutor 中执行 Promise.prototype.then 方法：(onResolved, onRejected) => {}
+        */
+        /* 2. onResolved 函数：成功的回调函数 (value) => {}
+            onRejected 函数：失败的回调函数 (reason) => {}
+            说明：指定用于得到成功 value 的成功回调和用于得到失败 reason 的失败回调返回一个新的 promise 对象
+        */
+
+    </script>
+</body>
+
+</html>
